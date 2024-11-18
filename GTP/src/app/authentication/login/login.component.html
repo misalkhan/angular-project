@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="login">
+        <h1>Login to <br> SeeBiz Social App</h1>
+        <form #loginForm="ngForm" (ngSubmit)="userLogin(loginForm)">
+            <label for="email">Email:</label>
+            <input type="text" id="email" placeholder="Enter your email" name="email" ngModel required>
+            <br><br>
+            <label for="password">Password:</label>
+            <input type="password" placeholder="Enter your password" id="password" ngModel name="password" required>
+            <br><br>
+            <input type="submit" value="Login">
+        </form>
+        <p>Don't have an account? <a href="/signup">SignUp</a></p>
+    </div>
+</div> 

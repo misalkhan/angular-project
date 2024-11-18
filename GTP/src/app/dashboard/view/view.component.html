@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="header">
+        <p (click)="timelinePosts()">Timeline</p>
+        <p (click)="getAllPosts()">User Posts</p>
+        <p (click)="userProfile()">User Profile</p>
+    </div>
+    <div class="main">
+        <button class="create-btn" (click)="createPage()">Create Post</button>
+        <button class="log-btn" (click)="logout()">Logout</button>
+
+        <div class="post" *ngFor="let post of posts;" >
+            <div class="post-header" *ngIf="timePost" >
+                <button class="del-btn" (click)="deletePost(post._id)">Delete Post</button>
+            </div>
+            <h2>{{post.title}}</h2>
+            <p style="margin-top: 10px; margin-bottom:30px">
+                {{post.content}}
+            </p>
+            <div class="btns">
+                <button class="btn">Like</button>
+                <button class="btn">Comment</button>
+                <button class="btn" >Share</button>
+                <button class="btn" (click)="editPage(post._id)" *ngIf="timePost" >Edit</button>
+            </div>
+        </div>
+    </div>
+</div>
